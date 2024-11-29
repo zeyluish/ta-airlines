@@ -25,4 +25,8 @@ public class Pilote extends Employe{
     public void setHeuresDeVol(int heuresDeVol) {
         this.heuresDeVol = heuresDeVol;
     }
+
+    public void obtenirVol(Vol vol) {
+        System.out.println("Les informations du vol : " + vol.numeroVol + "\nOrigine : " + vol.origine + "\nDestination : " + vol.destination + "\nDate & heure de départ : " + vol.dateHeureDepart + "\nDate & heure de d'arrivée : " + vol.dateHeureArrive + "\nEtat du vol : " + vol.etat);
+    }
 }
