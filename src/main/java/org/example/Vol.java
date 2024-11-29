@@ -8,11 +8,12 @@ public class Vol {
     String destination;
     String dateHeureDepart;
     String dateHeureArrive;
-    boolean etat;
+    static String etat;
     Avion avionAffecte;
     static ArrayList planning = new ArrayList();
+    Pilote pilote;
 
-    public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, boolean etat) {
+    public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
         this.origine = origine;
         this.destination = destination;
@@ -22,9 +23,10 @@ public class Vol {
         this.etat = etat;
     }
 
-    public void annulerVol(int numeroVol){
-
+    public static void annulerVol(Vol vol){
+        vol.etat = "Annulé";
     }
+
     public static void planifierVol(ArrayList vol){
         for (int i = 0; i < vol.size(); i++) {
             planning.add(vol.get(i));
@@ -32,9 +34,30 @@ public class Vol {
         System.out.println(planning);
     }
 
-    public void modifierVol(int numeroVol){
-
+    public void modifierVol(String attribut, String nouvelleValeur) {
+        switch (attribut.toLowerCase()) {
+            case "origine":
+                this.origine = nouvelleValeur;
+                break;
+            case "destination":
+                this.destination = nouvelleValeur;
+                break;
+            case "dateheuredepart":
+                this.dateHeureDepart = nouvelleValeur;
+                break;
+            case "dateheurearrive":
+                this.dateHeureArrive = nouvelleValeur;
+                break;
+            case "etat":
+                this.etat = nouvelleValeur;
+                break;
+            default:
+                System.out.println("Attribut inconnu : " + attribut);
+                return;
+        }
+        System.out.println("Le vol a été modifié : " + this);
     }
+
     public void ListingPassager(int numeroVol){
 
     }
@@ -99,11 +122,11 @@ public class Vol {
         this.dateHeureArrive = dateHeureArrive;
     }
 
-    public boolean isEtat() {
+    public String getEtat() {
         return etat;
     }
 
-    public void setEtat(boolean etat) {
+    public void setEtat(String etat) {
         this.etat = etat;
     }
 }
