@@ -1,23 +1,24 @@
 package org.example;
 
-public class Personne {
-    private int identifiant;
-    private String nom;
-    private String adresse;
-    private String contact;
+import java.util.UUID;
 
-    public Personne(int identifiant, String nom, String adresse, String contact) {
-        this.identifiant = identifiant;
+public class Personne {
+    private UUID identifiant = UUID.randomUUID();
+    public String nom;
+    public String adresse;
+    public String contact;
+
+    public Personne(String nom, String adresse, String contact) {
         this.nom = nom;
         this.adresse = adresse;
         this.contact = contact;
     }
 
-    public int getIdentifiant() {
+    public UUID getIdentifiant() {
         return identifiant;
     }
 
-    public void setIdentifiant(int identifiant) {
+    public void setIdentifiant(UUID identifiant) {
         this.identifiant = identifiant;
     }
 
@@ -43,6 +44,10 @@ public class Personne {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public void obtenirInfos() {
+        System.out.println("Les informations de " + this.nom + " sont :" + "\nIdentifiant : "+ identifiant + "\nAdresse : " + this.adresse + "\nContact : " + this.contact);
     }
 }
 

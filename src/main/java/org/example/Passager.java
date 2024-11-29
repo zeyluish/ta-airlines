@@ -1,5 +1,20 @@
 package org.example;
 
-public class Passager {
-    private String passport;
+import java.util.UUID;
+
+public class Passager extends Personne {
+    private String passeport;
+
+    public Passager(UUID identifiant, String nom, String adresse, String contact, String passeport) {
+        super(nom, adresse, contact);
+        this.passeport = passeport;
+    }
+
+    public String getPasseport() {
+        return passeport;
+    }
+
+    public void setPasseport(String passeport) {
+        this.passeport = passeport;
+    }
 }
