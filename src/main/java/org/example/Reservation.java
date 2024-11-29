@@ -9,6 +9,15 @@ public class Reservation {
         this.dateReservation = dateReservation;
     }
 
+    public void confirmerReservation() {
+
+    }
+    public void annulerReservation() {
+
+    }
+    public void modifierReservation() {
+
+    }
     public String toString() {
         return "Reservation{" +
                 "numeroReservation=" + numeroReservation +

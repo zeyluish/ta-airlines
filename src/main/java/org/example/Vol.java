@@ -7,6 +7,7 @@ public class Vol {
     String DateHeureDepart;
     String DateHeureArrive;
     boolean etat;
+    Avion avionAffecte;
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, boolean etat) {
         this.numeroVol = numeroVol;
@@ -15,6 +16,20 @@ public class Vol {
         DateHeureDepart = dateHeureDepart;
         DateHeureArrive = dateHeureArrive;
         this.etat = etat;
+        avionAffecte = null;
+    }
+
+    public void annulerVol(int numeroVol){
+
+    }
+    public void planifierVol(int numeroVol){
+
+    }
+    public void modifierVol(int numeroVol){
+
+    }
+    public void ListingPassager(int numeroVol){
+
     }
 
     public String toString() {
