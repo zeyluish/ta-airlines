@@ -27,6 +27,14 @@ public class Avion {
 
     }
 
+    public Vol getVolAffecte() {
+        return volAffecte;
+    }
+
+    public void setVolAffecte(Vol volAffecte) {
+        this.volAffecte = volAffecte;
+    }
+
     @Override
     public String toString() {
         return "Immatriculation : " + immatriculation + ", Modele : " + modele + ", Capacite : " + capacite + "Vol affecté : " + volAffecte;

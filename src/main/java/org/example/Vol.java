@@ -1,30 +1,37 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Vol {
     int numeroVol;
     String origine;
     String destination;
-    String DateHeureDepart;
-    String DateHeureArrive;
+    String dateHeureDepart;
+    String dateHeureArrive;
     boolean etat;
     Avion avionAffecte;
+    static ArrayList planning = new ArrayList();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, boolean etat) {
         this.numeroVol = numeroVol;
         this.origine = origine;
         this.destination = destination;
-        DateHeureDepart = dateHeureDepart;
-        DateHeureArrive = dateHeureArrive;
+        this.dateHeureDepart = dateHeureDepart;
+        this.dateHeureArrive = dateHeureArrive;
+        this.avionAffecte = null;
         this.etat = etat;
-        avionAffecte = null;
     }
 
     public void annulerVol(int numeroVol){
 
     }
-    public void planifierVol(int numeroVol){
-
+    public static void planifierVol(ArrayList vol){
+        for (int i = 0; i < vol.size(); i++) {
+            planning.add(vol.get(i));
+        }
+        System.out.println(planning);
     }
+
     public void modifierVol(int numeroVol){
 
     }
@@ -33,7 +40,23 @@ public class Vol {
     }
 
     public String toString() {
-        return "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + "Date heure arrivée : " + DateHeureArrive + ", DateHeureDepart : " + DateHeureDepart + ", etat : " + etat;
+        return "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + "Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat;
+    }
+
+    public Avion getAvionAffecte() {
+        return avionAffecte;
+    }
+
+    public void setAvionAffecte(Avion avionAffecte) {
+        this.avionAffecte = avionAffecte;
+    }
+
+    public ArrayList getPlanning() {
+        return planning;
+    }
+
+    public void setPlanning(ArrayList planning) {
+        this.planning = planning;
     }
 
     public int getNumeroVol() {
@@ -61,19 +84,19 @@ public class Vol {
     }
 
     public String getDateHeureDepart() {
-        return DateHeureDepart;
+        return dateHeureDepart;
     }
 
     public void setDateHeureDepart(String dateHeureDepart) {
-        DateHeureDepart = dateHeureDepart;
+        this.dateHeureDepart = dateHeureDepart;
     }
 
     public String getDateHeureArrive() {
-        return DateHeureArrive;
+        return dateHeureArrive;
     }
 
     public void setDateHeureArrive(String dateHeureArrive) {
-        DateHeureArrive = dateHeureArrive;
+        this.dateHeureArrive = dateHeureArrive;
     }
 
     public boolean isEtat() {
