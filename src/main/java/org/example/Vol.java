@@ -12,6 +12,7 @@ public class Vol {
     Avion avionAffecte;
     static ArrayList planning = new ArrayList();
     Pilote pilote;
+    Aeroport aeroportAffecte;
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -21,6 +22,7 @@ public class Vol {
         this.dateHeureArrive = dateHeureArrive;
         this.avionAffecte = null;
         this.etat = etat;
+        aeroportAffecte = null;
     }
 
     public static void annulerVol(Vol vol){

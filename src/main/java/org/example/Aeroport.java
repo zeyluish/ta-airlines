@@ -4,16 +4,24 @@ public class Aeroport {
     String nom;
     String ville;
     String description;
+    Vol volAffecte;
 
 
     public Aeroport(String nom, String ville, String description) {
         this.nom = nom;
         this.ville = ville;
         this.description = description;
+        volAffecte = null;
     }
 
-    public void affecterVol() {
-
+    public void affecterVol(Vol vol) {
+        if (volAffecte == null && vol.aeroportAffecte == null) {
+            volAffecte = vol;
+            vol.aeroportAffecte = this;
+            System.out.println("L'aéroport a bien été affecté");
+        } else {
+            System.out.println("L'aéroport ne peut pas être affecté");
+        }
     }
     @Override
     public String toString() {
