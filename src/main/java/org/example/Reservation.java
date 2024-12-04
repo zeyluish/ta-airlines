@@ -3,26 +3,43 @@ package org.example;
 public class Reservation {
     int numeroReservation;
     String dateReservation;
+    boolean isActive;
+    Passager passagerAffecté;
 
     public Reservation(int numeroReservation, String dateReservation) {
         this.numeroReservation = numeroReservation;
         this.dateReservation = dateReservation;
+        this.isActive = false;
     }
 
     public void confirmerReservation() {
+        if (!isActive) {
+            this.isActive = true;
+            System.out.println("La reservation " + this.numeroReservation + " a été confirmée");
+        } else {
+            System.out.println("La reservation était déjà confirmée");
+        }
 
     }
     public void annulerReservation() {
+        if (isActive) {
+            this.isActive = false;
+            System.out.println("La reservation " + this.numeroReservation + " a été annulée");
+        } else {
+            System.out.println("La réservation était déjà annulée");
+        }
 
     }
-    public void modifierReservation() {
-
+    public void modifierReservation(String nouvelleDate) {
+        this.dateReservation = nouvelleDate;
+        System.out.println("La réservation " + numeroReservation + " a été mise à jour à la date : " + nouvelleDate);
     }
+
     public String toString() {
-        return "Reservation{" +
-                "numeroReservation=" + numeroReservation +
-                ", dateReservation='" + dateReservation + '\'' +
-                '}';
+        return
+                "numeroReservation = " + numeroReservation +
+                ", dateReservation = '" + dateReservation + '\''
+                + " Etat = " + isActive;
     }
 
     public int getNumeroReservation() {
