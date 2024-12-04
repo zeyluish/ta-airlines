@@ -11,7 +11,7 @@ public class Vol {
     static String etat;
     Avion avionAffecte;
     static ArrayList planning = new ArrayList();
-    Pilote pilote;
+    Pilote piloteAffecte;
     Aeroport aeroportAffecte;
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
@@ -130,5 +130,21 @@ public class Vol {
 
     public void setEtat(String etat) {
         this.etat = etat;
+    }
+
+    public Pilote getPiloteAffecte() {
+        return piloteAffecte;
+    }
+
+    public void setPiloteAffecte(Pilote piloteAffecte) {
+        this.piloteAffecte = piloteAffecte;
+    }
+
+    public Aeroport getAeroportAffecte() {
+        return aeroportAffecte;
+    }
+
+    public void setAeroportAffecte(Aeroport aeroportAffecte) {
+        this.aeroportAffecte = aeroportAffecte;
     }
 }
