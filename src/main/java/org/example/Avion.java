@@ -1,5 +1,9 @@
 package org.example;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Avion {
     int immatriculation;
     String modele;
@@ -13,18 +17,36 @@ public class Avion {
         volAffecte = null;
     }
 
-    public void affecterVol(Vol vol){
-        if (volAffecte == null & vol.avionAffecte == null){
-            volAffecte = vol;
+    public void affecterVol(Vol vol) {
+        if (VerifierDisponibilite(vol.dateHeureDepart, vol.dateHeureArrive)) {
+            this.volAffecte = vol;
             vol.avionAffecte = this;
-            System.out.println("L'avion a bien été affecté au vol : " + vol);
+            System.out.println("L'avion a été affecté au vol : " + vol);
         } else {
-            System.out.println(" l'avion ne peut pas être affecté à ce vol");
+            System.out.println("L'avion n'est pas disponible pour les horaires de ce vol.");
         }
-
     }
-    public void VerifierDisponibilite(){
 
+    public boolean VerifierDisponibilite(String nouveauDepart, String nouvelleArrivee){
+        if (volAffecte == null){
+            return true;
+        } else {
+            String departExistant = volAffecte.dateHeureDepart;
+            String arriveExistant = volAffecte.dateHeureArrive;
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            try {
+                Date dateNouveauDepart = sdf.parse(nouveauDepart);
+                Date dateNouvelleArivee = sdf.parse(nouvelleArrivee);
+                Date dateDepartExistant = sdf.parse(departExistant);
+                Date dateArriveExistant = sdf.parse(arriveExistant);
+
+                boolean chevauchement = !(dateNouvelleArivee.before(dateDepartExistant) || dateNouveauDepart.after(dateArriveExistant));
+                return !chevauchement;
+            } catch (ParseException e) {
+                System.err.println("Erreur lors du parsing des dates : " + e.getMessage());
+                return false;
+            }
+        }
     }
 
     public Vol getVolAffecte() {
