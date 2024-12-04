@@ -45,6 +45,9 @@ public class Pilote extends Employe{
     }
 
     public void obtenirVol(Vol vol) {
-        System.out.println("Les informations du vol : " + vol.numeroVol + "\nOrigine : " + vol.origine + "\nDestination : " + vol.destination + "\nDate & heure de départ : " + vol.dateHeureDepart + "\nDate & heure de d'arrivée : " + vol.dateHeureArrive + "\nEtat du vol : " + vol.etat);
+        if (vol.piloteAffecte != this)
+            System.out.println("Le pilote : "+ this.nom +" n'est pas affecté au vol " + vol);
+        else
+            System.out.println("Le pilote " + this.nom + " est bien le pilote affecté au vol " + vol.numeroVol + "\nLes informations du vol " + vol.numeroVol + " sont :" + "\nOrigine : " + vol.origine + "\nDestination : " + vol.destination + "\nDate & heure de départ : " + vol.dateHeureDepart + "\nDate & heure de d'arrivée : " + vol.dateHeureArrive + "\nEtat du vol : " + vol.etat);
     }
 }

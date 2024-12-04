@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,22 @@ public class Main {
         PersonnelCabine personnelCabine6 = new PersonnelCabine("Marie", "30 impasse FFFF", "0678901234", "25/12/20", 99999, "stiwart");
 
         Vol vol1 = new Vol(1111, "Paris", "Mexico", "19h", "20h", "A l'heure");
+        Vol vol2 = new Vol(2222, "Londres", "Tokyo", "10h", "22h", "Retardé");
+        Vol vol3 = new Vol(3333, "New York", "Toronto", "14h", "15h", "Annulé");
+        Vol vol4 = new Vol(4444, "Berlin", "Rome", "08h", "10h", "A l'heure");
+        Vol vol5 = new Vol(5555, "Sydney", "Los Angeles", "06h", "22h", "En vol");
+        Vol vol6 = new Vol(6666, "Moscou", "Istanbul", "12h", "16h", "Retardé");
+        Vol vol7 = new Vol(7777, "Madrid", "Dubaï", "18h", "02h", "A l'heure");
+
+        ArrayList<Vol> vols = new ArrayList<>();
+        vols.add(vol1);
+        vols.add(vol2);
+        vols.add(vol3);
+        vols.add(vol4);
+        vols.add(vol5);
+        vols.add(vol6);
+        vols.add(vol7);
+
         pilote1.affecterVol(vol1);
         personnelCabine1.affecterVol(vol1);
         personnelCabine2.affecterVol(vol1);
@@ -23,5 +40,7 @@ public class Main {
         personnelCabine5.affecterVol(vol1);
         personnelCabine6.affecterVol(vol1);
 
+
+        pilote1.obtenirVol(vol2);
     }
 }
