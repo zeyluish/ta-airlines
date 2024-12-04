@@ -40,7 +40,7 @@ public class Pilote extends Employe{
             System.out.println("Ce vol est déjà affecté au pilote : " + vol.piloteAffecte);
         else {
             vol.piloteAffecte = this;
-            System.out.println("Le vol " + vol + " a été affecté.");
+            System.out.println("Le vol " + vol.numeroVol + " a été affecté.");
         }
     }
 

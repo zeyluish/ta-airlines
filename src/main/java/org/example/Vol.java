@@ -12,6 +12,7 @@ public class Vol {
     Avion avionAffecte;
     static ArrayList planning = new ArrayList();
     Pilote piloteAffecte;
+    static ArrayList personnelCabinesAffecte = new ArrayList();
     Aeroport aeroportAffecte;
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
@@ -146,5 +147,13 @@ public class Vol {
 
     public void setAeroportAffecte(Aeroport aeroportAffecte) {
         this.aeroportAffecte = aeroportAffecte;
+    }
+
+    public static ArrayList getPersonnelCabinesAffecte() {
+        return personnelCabinesAffecte;
+    }
+
+    public static void setPersonnelCabinesAffecte(ArrayList personnelCabinesAffecte) {
+        Vol.personnelCabinesAffecte = personnelCabinesAffecte;
     }
 }
