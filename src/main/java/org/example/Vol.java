@@ -10,7 +10,7 @@ public class Vol {
     String dateHeureArrive;
     static String etat;
     Avion avionAffecte;
-    static ArrayList planning = new ArrayList();
+    static ArrayList<Vol> planning = new ArrayList();
     Pilote piloteAffecte;
     static ArrayList personnelCabinesAffecte = new ArrayList();
     Aeroport aeroportAffecte;
@@ -30,12 +30,26 @@ public class Vol {
         vol.etat = "Annulé";
     }
 
-    public static void planifierVol(ArrayList vol){
-        for (int i = 0; i < vol.size(); i++) {
-            planning.add(vol.get(i));
+    public static void planifierVol(ArrayList<Vol> vols, String periode){
+        System.out.println("Planification des vols pour la période : " + periode);
+
+        for (Vol vol : vols) {
+            if (vol.dateHeureDepart.startsWith(periode)) {
+                if (!planning.contains(vol)) {
+                    planning.add(vol);
+                    System.out.println("Vol ajouté : " + vol);
+                } else {
+                    System.out.println("Le vol est déjà planifié : " + vol);
+                }
+            }
         }
-        System.out.println(planning);
+
+        System.out.println("Planning complet :");
+        for (Vol v : planning) {
+            System.out.println(v);
+        }
     }
+
 
     public void modifierVol(String attribut, String nouvelleValeur) {
         switch (attribut.toLowerCase()) {
