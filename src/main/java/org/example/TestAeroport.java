@@ -13,14 +13,15 @@ public class TestAeroport {
         Avion avion1 = new Avion(78,"Airbus", 200);
         Avion avion2 = new Avion(92,"Boieng", 150);
 
-        Vol vol1 = new Vol(1,"Paris", "Oulu","19","22", "A l'heure");
-        Vol vol2 = new Vol(2,"Oulu", "Paris","19","22","A l'heure");
+        Vol vol1 = new Vol(1,"Paris", "Oulu","2024-12-05 10:00","2024-12-05 12:00", "A l'heure");
+        Vol vol2 = new Vol(2,"Oulu", "Paris","2024-12-05 11:30","2024-12-05 13:30","A l'heure");
+        Vol vol3 = new Vol(3,"Paris", "Rome","2024-12-05 13:45", "2024-12-05 16:00", "A l'heure");
 
         Reservation reservation1 = new Reservation(101, "2024-12-10");
 
         avion1.affecterVol(vol1);
-        reservation1.confirmerReservation();
-        reservation1.annulerReservation();
-        reservation1.modifierReservation("04/12/2024");
+        avion1.affecterVol(vol2);
+        avion1.affecterVol(vol3);
+
     }
 }
