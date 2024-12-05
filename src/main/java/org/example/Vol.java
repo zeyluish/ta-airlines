@@ -91,6 +91,9 @@ public class Vol {
         } if (arriveAeroportAffecte != null){
             s += ", aéroport d'arrivée : "+ arriveAeroportAffecte.nom;
         }
+        if (personnelCabinesAffecte.size() > 0){
+            s+= personnelCabinesAffecte.toString();
+        }
         return s;
     }
 

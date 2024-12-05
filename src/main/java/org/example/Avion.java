@@ -75,6 +75,12 @@ public class Avion {
         System.out.println("L'avion a bien été modifié : " + this);
     }
 
+    public void supprimerVol(Vol vol) {
+        vol.avionAffecte = null;
+        this.volAffecte = null;
+        System.out.println("Le vol a bien été supprimé");
+    }
+
 
     public Vol getVolAffecte() {
         return volAffecte;
@@ -92,6 +98,8 @@ public class Avion {
         }
         return s;
     }
+
+// <editor-fold desc="Getter and setter">
 
     public int getImmatriculation() {
         return immatriculation;
@@ -116,6 +124,5 @@ public class Avion {
     public void setCapacite(int capacite) {
         this.capacite = capacite;
     }
-
-
+// </editor-fold>
 }
