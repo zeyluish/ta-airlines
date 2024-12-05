@@ -66,5 +66,8 @@ public class Main {
 
         pilote2.obtenirRole();
         personnelCabine3.obtenirRole();
+
+        String s = pilote1.toString();
+        System.out.println(s);
     }
 }

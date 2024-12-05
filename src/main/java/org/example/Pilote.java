@@ -36,6 +36,11 @@ public class Pilote extends Employe{
         this.volAffecte = volAffecte;
     }
 
+    public String toString() {
+        String s = "Le pilote est " + super.toString() + "\n" + "\n Sa license est : "+ license + "\n Il a : "+ heuresDeVol + " heures de vols.";
+        return s;
+    }
+
     public void affecterVol(Vol vol) {
         if (vol.piloteAffecte != null)
             System.out.println("Ce vol est déjà affecté au pilote : " + vol.piloteAffecte);
