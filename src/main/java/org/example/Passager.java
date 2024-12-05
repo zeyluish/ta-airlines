@@ -50,6 +50,10 @@ public class Passager extends Personne {
         }
     }
 
+    public String toString() {
+        String s = super.toString() + "\nPasseport : " + passeport;
+        return s;
+    }
 
     public String getPasseport() {
         return passeport;

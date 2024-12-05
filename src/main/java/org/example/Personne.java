@@ -46,6 +46,11 @@ public class Personne {
         this.contact = contact;
     }
 
+    public String toString() {
+        String s = "Les informations de " + nom + " sont :" + "\nIdentifiant : "+ identifiant + "\nAdresse : " + adresse + "\nContact : " + contact;
+        return s;
+    }
+
     public void obtenirInfos() { // équivalent à un toString()
         System.out.println("Les informations de " + this.nom + " sont :" + "\nIdentifiant : "+ identifiant + "\nAdresse : " + this.adresse + "\nContact : " + this.contact);
     }

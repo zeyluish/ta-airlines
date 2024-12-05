@@ -2,11 +2,13 @@ package org.example;
 
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
         Personne p1 = new Personne("Téo GAUDIN", "69 rue Emile AUGIER", "0783583150");
         p1.obtenirInfos();
+        Passager passager1 = new Passager(UUID.randomUUID(), "John Doe", "123 rue Exemple", "john.doe@email.com", "AB123456");
         Pilote pilote1 = new Pilote("JP", "chez lui", "tel", "10/10/10", 2222,"licence", 13);
         Pilote pilote2 = new Pilote("Gab", "ahbdfbazdba", "00000000", "101010", 0012, "llll", 11);
         Pilote pilote3 = new Pilote("Jack", "chez toi", "000918", "aujd", 1234,"dbaida", 23);
@@ -72,5 +74,11 @@ public class Main {
 
         String s1 = personnelCabine1.toString();
         System.out.println(s1);
+
+        String s2 = p1.toString();
+        System.out.println(s2);
+
+        String s3 = passager1.toString();
+        System.out.println(s3);
     }
 }
