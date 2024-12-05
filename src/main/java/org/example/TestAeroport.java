@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import static org.example.Aeroport.affecterVol;
 import static org.example.Vol.annulerVol;
@@ -20,6 +21,15 @@ public class TestAeroport {
 
         Aeroport CDG = new Aeroport("CDG", "Paris", "Aeroport CDG");
         Aeroport Oulu = new Aeroport("OuluAirport", "Oulu", "Aeroport de Oulu");
+
+        Passager passager1 = new Passager(UUID.randomUUID(), "John Doe", "123 rue Exemple", "john.doe@email.com", "AB123456");
+        Passager passager2 = new Passager(UUID.randomUUID(), "Jane Smith", "456 avenue Exemple", "jane.smith@email.com", "CD789012");
+
+
+        passager1.reserverVol(vol1);
+        passager2.reserverVol(vol1);
+
+        vol1.ListingPassager();
 
         affecterVol(vol2,Oulu,CDG);
         affecterVol(vol1,Oulu,CDG);

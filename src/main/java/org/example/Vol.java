@@ -80,7 +80,7 @@ public class Vol {
 
     public void ListingPassager(){
         for (int i = 0; i < passagerAffecte.size(); i++) {
-            System.out.println("Nom : " + passagerAffecte.get(i).getNom() + "Identifiant : " + passagerAffecte.get(i).getIdentifiant());
+            System.out.println("Nom : " + passagerAffecte.get(i).getNom() + ", Identifiant : " + passagerAffecte.get(i).getIdentifiant());
         }
     }
 

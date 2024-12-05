@@ -10,7 +10,7 @@ public class Reservation {
     public Reservation(int numeroReservation, String dateReservation) {
         this.numeroReservation = numeroReservation;
         this.dateReservation = dateReservation;
-        this.isActive = false;
+        this.isActive = true;
     }
 
     public void confirmerReservation() {
@@ -57,5 +57,29 @@ public class Reservation {
 
     public void setDateReservation(String dateReservation) {
         this.dateReservation = dateReservation;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public Passager getPassagerAffecté() {
+        return passagerAffecté;
+    }
+
+    public void setPassagerAffecté(Passager passagerAffecté) {
+        this.passagerAffecté = passagerAffecté;
+    }
+
+    public Vol getVolaffecte() {
+        return volaffecte;
+    }
+
+    public void setVolaffecte(Vol volaffecte) {
+        this.volaffecte = volaffecte;
     }
 }
