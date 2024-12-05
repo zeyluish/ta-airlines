@@ -1,28 +1,31 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Aeroport {
     String nom;
     String ville;
     String description;
-    Vol volAffecte;
+    private static ArrayList<Vol> volAffecte = new ArrayList<>();
 
 
     public Aeroport(String nom, String ville, String description) {
         this.nom = nom;
         this.ville = ville;
         this.description = description;
-        volAffecte = null;
     }
 
-    public void affecterVol(Vol vol) {
-        if (volAffecte == null && vol.aeroportAffecte == null) {
-            volAffecte = vol;
-            vol.aeroportAffecte = this;
-            System.out.println("L'aéroport a bien été affecté");
+    public static void affecterVol(Vol vol, Aeroport departAeroport, Aeroport arriveAeroport) {
+        if (vol.departAeroportAffecte == null && vol.arriveAeroportAffecte == null) {
+            volAffecte.add(vol);
+            vol.departAeroportAffecte = departAeroport;
+            vol.arriveAeroportAffecte = arriveAeroport;
+            System.out.println("Le vol " + "a bien eu ses aéroports de départ et d'arrivé affectés");
         } else {
             System.out.println("L'aéroport ne peut pas être affecté");
         }
     }
+
     @Override
     public String toString() {
         return "Aeroport{" +

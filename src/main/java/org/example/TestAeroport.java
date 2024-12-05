@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
+import static org.example.Aeroport.affecterVol;
 import static org.example.Vol.annulerVol;
 import static org.example.Vol.planifierVol;
 
@@ -16,13 +17,13 @@ public class TestAeroport {
         Vol vol1 = new Vol(1,"Paris", "Oulu","2024-12-05 10:00","2024-12-05 12:00", "A l'heure");
         Vol vol2 = new Vol(2,"Oulu", "Paris","2024-12-05 11:30","2024-12-05 13:30","A l'heure");
         Vol vol3 = new Vol(3,"Paris", "Rome","2024-12-05 13:45", "2024-12-05 16:00", "A l'heure");
-        listeVol.add(vol1);
-        listeVol.add(vol2);
-        listeVol.add(vol3);
 
-        planifierVol(listeVol, "2024-12-04");
+        Aeroport CDG = new Aeroport("CDG", "Paris", "Aeroport CDG");
+        Aeroport Oulu = new Aeroport("OuluAirport", "Oulu", "Aeroport de Oulu");
 
-        System.out.println(listeVol);
+        affecterVol(vol2,Oulu,CDG);
+        System.out.println(vol1);
+
         Reservation reservation1 = new Reservation(101, "2024-12-10");
 
         avion1.affecterVol(vol1);

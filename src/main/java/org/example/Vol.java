@@ -13,7 +13,9 @@ public class Vol {
     static ArrayList<Vol> planning = new ArrayList();
     Pilote piloteAffecte;
     static ArrayList personnelCabinesAffecte = new ArrayList();
-    Aeroport aeroportAffecte;
+    Aeroport departAeroportAffecte;
+    Aeroport arriveAeroportAffecte;
+    static ArrayList<Passager> passagerAffecte = new ArrayList();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -23,7 +25,8 @@ public class Vol {
         this.dateHeureArrive = dateHeureArrive;
         this.avionAffecte = null;
         this.etat = etat;
-        aeroportAffecte = null;
+        departAeroportAffecte = null;
+        arriveAeroportAffecte = null;
     }
 
     public static void annulerVol(Vol vol){
@@ -43,7 +46,6 @@ public class Vol {
                 }
             }
         }
-
         System.out.println("Planning complet :");
         for (Vol v : planning) {
             System.out.println(v);
@@ -75,12 +77,14 @@ public class Vol {
         System.out.println("Le vol a été modifié : " + this);
     }
 
-    public void ListingPassager(int numeroVol){
-
+    public void ListingPassager(){
+        for (int i = 0; i < passagerAffecte.size(); i++) {
+            System.out.println("Nom : " + passagerAffecte.get(i).getNom() + "Identifiant : " + passagerAffecte.get(i).getIdentifiant());
+        }
     }
 
     public String toString() {
-        return "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + "Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat;
+        return "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + "Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat + ", aéroport de départ : " + departAeroportAffecte.nom + ", aéroport d'arrivée : " + arriveAeroportAffecte.nom;
     }
 
     public Avion getAvionAffecte() {
@@ -155,12 +159,12 @@ public class Vol {
         this.piloteAffecte = piloteAffecte;
     }
 
-    public Aeroport getAeroportAffecte() {
-        return aeroportAffecte;
+    public Aeroport getDepartAeroportAffecte() {
+        return departAeroportAffecte;
     }
 
-    public void setAeroportAffecte(Aeroport aeroportAffecte) {
-        this.aeroportAffecte = aeroportAffecte;
+    public void setDepartAeroportAffecte(Aeroport departAeroportAffecte) {
+        this.departAeroportAffecte = departAeroportAffecte;
     }
 
     public static ArrayList getPersonnelCabinesAffecte() {
