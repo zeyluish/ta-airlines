@@ -8,6 +8,7 @@ public class Main {
         Personne p1 = new Personne("Téo GAUDIN", "69 rue Emile AUGIER", "0783583150");
         p1.obtenirInfos();
         Pilote pilote1 = new Pilote("JP", "chez lui", "tel", "10/10/10", 2222,"licence", 13);
+        Pilote pilote2 = new Pilote("Gab", "ahbdfbazdba", "00000000", "101010", 0012, "llll", 11);
         PersonnelCabine personnelCabine1 = new PersonnelCabine("Sophie", "8 rue AAAA", "0122334455", "12/12/12", 44444, "stiwart");
         PersonnelCabine personnelCabine2 = new PersonnelCabine("Alice", "15 rue BBBB", "0654321987", "01/01/01", 55555, "stiwart");
         PersonnelCabine personnelCabine3 = new PersonnelCabine("Thomas", "22 avenue CCCC", "0787654321", "15/03/99", 66666, "stiwart");
@@ -33,7 +34,13 @@ public class Main {
         vols.add(vol7);
 
         pilote1.affecterVol(vol1);
+        pilote2.affecterVol(vol1);
         personnelCabine1.affecterVol(vol1);
+        System.out.println(vol1);
+        System.out.println(vol2);
+
+
+
         personnelCabine2.affecterVol(vol1);
         personnelCabine3.affecterVol(vol1);
         personnelCabine4.affecterVol(vol1);
@@ -42,5 +49,12 @@ public class Main {
 
 
         pilote1.obtenirVol(vol2);
+        personnelCabine1.obtenirVol(vol1);
+        personnelCabine1.obtenirVol(vol2);
+        personnelCabine1.obtenirVol(vol3);
+        personnelCabine1.obtenirVol(vol4);
+        personnelCabine1.obtenirVol(vol5);
+        personnelCabine1.obtenirVol(vol6);
+
     }
 }

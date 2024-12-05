@@ -12,7 +12,7 @@ public class Vol {
     Avion avionAffecte;
     static ArrayList<Vol> planning = new ArrayList();
     Pilote piloteAffecte;
-    static ArrayList personnelCabinesAffecte = new ArrayList();
+    ArrayList personnelCabinesAffecte = new ArrayList();
     Aeroport departAeroportAffecte;
     Aeroport arriveAeroportAffecte;
     static ArrayList<Passager> passagerAffecte = new ArrayList();
@@ -92,7 +92,10 @@ public class Vol {
             s += ", aéroport d'arrivée : "+ arriveAeroportAffecte.nom;
         }
         if (personnelCabinesAffecte.size() > 0){
-            s+= personnelCabinesAffecte.toString();
+            s+= personnelCabinesAffecte.get(0);
+        }
+        if (piloteAffecte != null){
+            s += "pilote" + piloteAffecte.nom;
         }
         return s;
     }
@@ -177,11 +180,11 @@ public class Vol {
         this.departAeroportAffecte = departAeroportAffecte;
     }
 
-    public static ArrayList getPersonnelCabinesAffecte() {
+    public ArrayList getPersonnelCabinesAffecte() {
         return personnelCabinesAffecte;
     }
 
-    public static void setPersonnelCabinesAffecte(ArrayList personnelCabinesAffecte) {
-        Vol.personnelCabinesAffecte = personnelCabinesAffecte;
+    public void setPersonnelCabinesAffecte(ArrayList personnelCabinesAffecte) {
+        this.personnelCabinesAffecte = personnelCabinesAffecte;
     }
 }
