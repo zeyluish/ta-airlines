@@ -5,6 +5,7 @@ import java.util.UUID;
 public class Employe extends Personne {
     private int numeroEmploye;
     private String dateEmbauche;
+    String Role;
 
     public Employe(String nom, String adresse, String contact, String dateEmbauche, int numeroEmploye) {
         super(nom, adresse, contact);
@@ -26,5 +27,17 @@ public class Employe extends Personne {
 
     public void setDateEmbauche(String dateEmbauche) {
         this.dateEmbauche = dateEmbauche;
+    }
+
+
+
+    public void obtenirRole() {
+        switch (Role) {
+            case "pilote":
+                System.out.println("Cet employé est un Pilote");
+                break;
+            case "cabine":
+                System.out.println("Cet employé est un Personnel Cabine");
+        }
     }
 }

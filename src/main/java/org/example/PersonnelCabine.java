@@ -3,9 +3,11 @@ package org.example;
 public class PersonnelCabine extends Employe{
     private String qualification;
 
+
     public PersonnelCabine(String nom, String adresse, String contact, String dateEmbauche, int numeroEmploye, String qualification) {
         super(nom, adresse, contact, dateEmbauche, numeroEmploye);
         this.qualification = qualification;
+        this.Role = "cabine";
     }
 
     public String getQualification() {

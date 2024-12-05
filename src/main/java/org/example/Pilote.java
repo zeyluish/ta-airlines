@@ -9,6 +9,7 @@ public class Pilote extends Employe{
         super(nom, adresse, contact, dateEmbauche, numeroEmploye);
         this.license = license;
         this.heuresDeVol = heuresDeVol;
+        this.Role = "pilote";
     }
 
     public String getLicense() {

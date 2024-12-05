@@ -9,6 +9,8 @@ public class Main {
         p1.obtenirInfos();
         Pilote pilote1 = new Pilote("JP", "chez lui", "tel", "10/10/10", 2222,"licence", 13);
         Pilote pilote2 = new Pilote("Gab", "ahbdfbazdba", "00000000", "101010", 0012, "llll", 11);
+        Pilote pilote3 = new Pilote("Jack", "chez toi", "000918", "aujd", 1234,"dbaida", 23);
+        Pilote pilote4 = new Pilote("Daniel", "Ici", "telephone", "210210", 2123, "dadadda", 99);
         PersonnelCabine personnelCabine1 = new PersonnelCabine("Sophie", "8 rue AAAA", "0122334455", "12/12/12", 44444, "stiwart");
         PersonnelCabine personnelCabine2 = new PersonnelCabine("Alice", "15 rue BBBB", "0654321987", "01/01/01", 55555, "stiwart");
         PersonnelCabine personnelCabine3 = new PersonnelCabine("Thomas", "22 avenue CCCC", "0787654321", "15/03/99", 66666, "stiwart");
@@ -23,6 +25,8 @@ public class Main {
         Vol vol5 = new Vol(5555, "Sydney", "Los Angeles", "06h", "22h", "En vol");
         Vol vol6 = new Vol(6666, "Moscou", "Istanbul", "12h", "16h", "Retardé");
         Vol vol7 = new Vol(7777, "Madrid", "Dubaï", "18h", "02h", "A l'heure");
+
+
 
         ArrayList<Vol> vols = new ArrayList<>();
         vols.add(vol1);
@@ -56,5 +60,11 @@ public class Main {
         personnelCabine1.obtenirVol(vol5);
         personnelCabine1.obtenirVol(vol6);
 
+
+
+        pilote1.obtenirInfos();
+
+        pilote2.obtenirRole();
+        personnelCabine3.obtenirRole();
     }
 }
