@@ -69,5 +69,8 @@ public class Main {
 
         String s = pilote1.toString();
         System.out.println(s);
+
+        String s1 = personnelCabine1.toString();
+        System.out.println(s1);
     }
 }

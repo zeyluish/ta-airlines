@@ -18,6 +18,11 @@ public class PersonnelCabine extends Employe{
         this.qualification = qualification;
     }
 
+    public String toString() {
+        String s = "Le personnel de cabine est :\n" + super.toString() + "\n" + "\nQualification : " + qualification;
+        return s;
+    }
+
     public void affecterVol(Vol vol) {
         if (vol.personnelCabinesAffecte.size() >= 3)
             System.out.println("L'équipage du vol " + vol.numeroVol + " est complet.");

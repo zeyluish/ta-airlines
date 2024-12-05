@@ -37,7 +37,7 @@ public class Pilote extends Employe{
     }
 
     public String toString() {
-        String s = "Le pilote est " + super.toString() + "\n" + "\n Sa license est : "+ license + "\n Il a : "+ heuresDeVol + " heures de vols.";
+        String s = "Le pilote est :\n" + super.toString() + "\n" + "\nSa license est : "+ license + "\nIl a : "+ heuresDeVol + " heures de vols.";
         return s;
     }
 
