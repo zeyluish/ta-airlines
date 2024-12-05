@@ -5,6 +5,7 @@ public class Reservation {
     String dateReservation;
     boolean isActive;
     Passager passagerAffecté;
+    Vol volaffecte;
 
     public Reservation(int numeroReservation, String dateReservation) {
         this.numeroReservation = numeroReservation;

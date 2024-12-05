@@ -10,6 +10,16 @@ public class Passager extends Personne {
         this.passeport = passeport;
     }
 
+    public void reserverVol() {
+
+    }
+    public void annulerReservation() {
+
+    }
+    public void obtenirReservation(){
+
+    }
+
     public String getPasseport() {
         return passeport;
     }

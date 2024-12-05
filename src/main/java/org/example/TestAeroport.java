@@ -22,7 +22,9 @@ public class TestAeroport {
         Aeroport Oulu = new Aeroport("OuluAirport", "Oulu", "Aeroport de Oulu");
 
         affecterVol(vol2,Oulu,CDG);
-        System.out.println(vol1);
+        affecterVol(vol1,Oulu,CDG);
+
+        CDG.afficherVols();
 
         Reservation reservation1 = new Reservation(101, "2024-12-10");
 

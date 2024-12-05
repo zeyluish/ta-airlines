@@ -16,6 +16,7 @@ public class Vol {
     Aeroport departAeroportAffecte;
     Aeroport arriveAeroportAffecte;
     static ArrayList<Passager> passagerAffecte = new ArrayList();
+    static ArrayList<Reservation> listeReservation = new ArrayList();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -84,7 +85,13 @@ public class Vol {
     }
 
     public String toString() {
-        return "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + "Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat + ", aéroport de départ : " + departAeroportAffecte.nom + ", aéroport d'arrivée : " + arriveAeroportAffecte.nom;
+        String s = "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + ", Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat;
+        if (departAeroportAffecte != null){
+            s += ", aéroport de départ : "+ departAeroportAffecte.nom ;
+        } if (arriveAeroportAffecte != null){
+            s += ", aéroport d'arrivée : "+ arriveAeroportAffecte.nom;
+        }
+        return s;
     }
 
     public Avion getAvionAffecte() {

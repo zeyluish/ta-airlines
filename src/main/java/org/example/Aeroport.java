@@ -26,13 +26,21 @@ public class Aeroport {
         }
     }
 
+    public void afficherVols() {
+        if (volAffecte.isEmpty()) {
+            System.out.println("Aucun vol n'est affecté à cet aéroport.");
+        } else {
+            System.out.println("Liste des vols affectés à cet aéroport :");
+            for (Vol vol : volAffecte) {
+                System.out.println("- " + vol);
+            }
+        }
+    }
+
     @Override
     public String toString() {
-        return "Aeroport{" +
-                "nom='" + nom + '\'' +
-                ", ville='" + ville + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        String s = "nom : " + nom + ", ville : " + ville + ", description : " + description;
+        return s;
     }
 
     public String getNom() {
