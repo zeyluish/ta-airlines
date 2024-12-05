@@ -91,11 +91,23 @@ public class Vol {
         } if (arriveAeroportAffecte != null){
             s += ", aéroport d'arrivée : "+ arriveAeroportAffecte.nom;
         }
-        if (personnelCabinesAffecte.size() > 0){
-            s+= personnelCabinesAffecte.get(0);
-        }
         if (piloteAffecte != null){
-            s += "pilote" + piloteAffecte.nom;
+            s += ", pilote : " + piloteAffecte.nom;
+        }
+        if (avionAffecte != null){
+            s += ", avion : " + avionAffecte.modele;
+        }
+        if (!personnelCabinesAffecte.isEmpty()){
+            s+= ", personnel cabine : ";
+            for (Object personnel : personnelCabinesAffecte) {
+                s += personnel + ", ";
+            }
+        }
+        if (!listeReservation.isEmpty()){
+            s+= ", nombre de réservations : " + listeReservation.size();
+        }
+        if (!passagerAffecte.isEmpty()){
+            s+= ", nombre de passagers : " + passagerAffecte.size();
         }
         return s;
     }

@@ -6,7 +6,7 @@ public class Aeroport {
     String nom;
     String ville;
     String description;
-    private static ArrayList<Vol> volAffecte = new ArrayList<>();
+    private ArrayList<Vol> volAffecte = new ArrayList<>();
 
 
     public Aeroport(String nom, String ville, String description) {
@@ -17,7 +17,8 @@ public class Aeroport {
 
     public static void affecterVol(Vol vol, Aeroport departAeroport, Aeroport arriveAeroport) {
         if (vol.departAeroportAffecte == null && vol.arriveAeroportAffecte == null) {
-            volAffecte.add(vol);
+            departAeroport.volAffecte.add(vol);
+            arriveAeroport.volAffecte.add(vol);
             vol.departAeroportAffecte = departAeroport;
             vol.arriveAeroportAffecte = arriveAeroport;
             System.out.println("Le vol " + "a bien eu ses aéroports de départ et d'arrivé affectés");
