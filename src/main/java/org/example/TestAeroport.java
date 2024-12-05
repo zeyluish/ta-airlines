@@ -29,18 +29,23 @@ public class TestAeroport {
         passager1.reserverVol(vol1);
         passager2.reserverVol(vol1);
 
+
         vol1.ListingPassager();
 
         affecterVol(vol2,Oulu,CDG);
         affecterVol(vol1,Oulu,CDG);
 
         CDG.afficherVols();
+        CDG.modifierAeroport("Ville", "Paris Proche");
 
         Reservation reservation1 = new Reservation(101, "2024-12-10");
 
         avion1.affecterVol(vol1);
         avion1.affecterVol(vol2);
         avion1.affecterVol(vol3);
+
+        avion1.modifierAvion("capacite", "250");
+
 
     }
 }

@@ -37,6 +37,23 @@ public class Aeroport {
         }
     }
 
+    public void modifierAeroport(String attribut, String nouvelleValeur){
+        switch (attribut.toLowerCase()) {
+            case "nom":
+                this.nom = nouvelleValeur;
+                break;
+            case "ville":
+                this.ville = nouvelleValeur;
+                break;
+            case "description":
+                this.description = description;
+            default:
+                System.out.println("Attribut inconnu");
+                return;
+        }
+        System.out.println("L'aéroport a bien été modifié : " + this);
+    }
+
     @Override
     public String toString() {
         String s = "nom : " + nom + ", ville : " + ville + ", description : " + description;

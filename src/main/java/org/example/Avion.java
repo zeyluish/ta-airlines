@@ -49,6 +49,33 @@ public class Avion {
         }
     }
 
+    public void modifierAvion(String attribut, String nouvelleValeur) {
+        switch (attribut.toLowerCase()) {
+            case "immatriculation":
+                try {
+                    this.immatriculation = Integer.parseInt(nouvelleValeur);
+                } catch (NumberFormatException e) {
+                    System.out.println("L'immatriculation doit être un nombre entier.");
+                }
+                break;
+            case "modele":
+                this.modele = nouvelleValeur;
+                break;
+            case "capacite":
+                try {
+                    this.capacite = Integer.parseInt(nouvelleValeur);
+                } catch (NumberFormatException e) {
+                    System.out.println("La capacité doit être un nombre entier.");
+                }
+                break;
+            default:
+                System.out.println("Attribut inconnu : " + attribut);
+                return;
+        }
+        System.out.println("L'avion a bien été modifié : " + this);
+    }
+
+
     public Vol getVolAffecte() {
         return volAffecte;
     }
@@ -59,7 +86,11 @@ public class Avion {
 
     @Override
     public String toString() {
-        return "Immatriculation : " + immatriculation + ", Modele : " + modele + ", Capacite : " + capacite + "Vol affecté : " + volAffecte;
+        String s = "Immatriculation : " + immatriculation + ", Modele : " + modele + ", Capacite : " + capacite ;
+        if (volAffecte != null) {
+            s+= ", vol affecté { " + volAffecte.origine + " à " + volAffecte.destination + "}";
+        }
+        return s;
     }
 
     public int getImmatriculation() {
