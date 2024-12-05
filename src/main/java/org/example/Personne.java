@@ -46,7 +46,7 @@ public class Personne {
         this.contact = contact;
     }
 
-    public void obtenirInfos() {
+    public void obtenirInfos() { // équivalent à un toString()
         System.out.println("Les informations de " + this.nom + " sont :" + "\nIdentifiant : "+ identifiant + "\nAdresse : " + this.adresse + "\nContact : " + this.contact);
     }
 }

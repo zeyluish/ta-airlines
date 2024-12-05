@@ -29,6 +29,10 @@ public class Employe extends Personne {
         this.dateEmbauche = dateEmbauche;
     }
 
+    public String toString() {
+        String s = "Numéro d'employé : " + numeroEmploye + "\nNom de l'employé : " + nom + "\nAdresse de l'employé : " + adresse + "\nContact de l'employé : " + contact + "\nDate d'embauche : " + dateEmbauche;
+        return s;
+    }
 
 
     public void obtenirRole() {
