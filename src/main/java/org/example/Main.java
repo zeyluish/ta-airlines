@@ -24,7 +24,7 @@ public class Main {
         PersonnelCabine personnelCabine5 = new PersonnelCabine("Lucas", "18 rue EEEE", "0987654321", "20/05/15", 88888, "stiwart");
         PersonnelCabine personnelCabine6 = new PersonnelCabine("Marie", "30 impasse FFFF", "0678901234", "25/12/20", 99999, "stiwart");
         */
-       // importVol();
+       importVol();
         importAeroport();
         /*ArrayList<Vol> vols = new ArrayList<>();
         vols.add(vol1);
