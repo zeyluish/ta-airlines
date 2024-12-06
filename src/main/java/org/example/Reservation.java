@@ -54,10 +54,14 @@ public class Reservation {
     }*/
 
     public String toString() {
-        return
-                "numeroReservation = " + numeroReservation +
+        String s =                 "numeroReservation = " + numeroReservation +
                 ", dateReservation = '" + dateReservation + '\''
                 + " Etat = " + isActive;
+        if (volaffecte != null) {
+            s += ", volaffecte = " + volaffecte.origine + " à " + volaffecte.destination;
+        }
+        return s;
+
     }
 
     public int getNumeroReservation() {

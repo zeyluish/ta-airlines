@@ -43,10 +43,10 @@ public class Pilote extends Employe{
 
     public void affecterVol(Vol vol) {
         if (vol.piloteAffecte != null)
-            System.out.println("Ce vol est déjà affecté au pilote : " + vol.piloteAffecte);
+            System.out.println("Ce vol est déjà affecté au pilote : " + vol.piloteAffecte.nom);
         else {
             vol.piloteAffecte = this;
-            System.out.println("Le vol " + vol.numeroVol + " a été affecté.");
+            System.out.println("Le vol " + vol.numeroVol + " a été affecté au pilote : " + this.nom);
         }
     }
 

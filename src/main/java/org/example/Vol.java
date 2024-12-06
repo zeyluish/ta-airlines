@@ -11,7 +11,7 @@ public class Vol {
     String destination;
     String dateHeureDepart;
     String dateHeureArrive;
-    static String etat;
+    String etat;
     Avion avionAffecte;
     static ArrayList<Vol> planning = new ArrayList();
     Pilote piloteAffecte;
@@ -34,8 +34,8 @@ public class Vol {
         arriveAeroportAffecte = null;
     }
 
-    public static void annulerVol(Vol vol){
-        vol.etat = "Annulé";
+    public void annulerVol(){
+        this.etat = "Annulé";
     }
 
     public static void planifierVol(ArrayList<Vol> vols, String periode){
@@ -45,7 +45,6 @@ public class Vol {
             if (vol.dateHeureDepart.startsWith(periode)) {
                 if (!planning.contains(vol)) {
                     planning.add(vol);
-                    System.out.println("Vol ajouté : " + vol);
                 } else {
                     System.out.println("Le vol est déjà planifié : " + vol);
                 }
@@ -136,12 +135,12 @@ public class Vol {
         if (avionAffecte != null){
             s += ", avion : " + avionAffecte.modele;
         }
-        if (!personnelCabinesAffecte.isEmpty()){
-            s+= ", personnel cabine : ";
+        /*if (!personnelCabinesAffecte.isEmpty()){
+            s += ", personnel cabine : ";
             for (Object personnel : personnelCabinesAffecte) {
                 s += personnel + ", ";
             }
-        }
+        }*/
         if (!listeReservation.isEmpty()){
             s+= ", nombre de réservations : " + listeReservation.size();
         }

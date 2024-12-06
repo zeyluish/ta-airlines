@@ -23,7 +23,7 @@ public class Passager extends Personne {
             vol.listeReservation.add(nouvelleReservation);
             vol.passagerAffecte.add(this);
             reservations.add(nouvelleReservation);
-            System.out.println("Le vol a été reservé avec succès");
+            System.out.println("Le vol a été reservé avec succès par le passager : " + this.nom);
         }
     }
 
