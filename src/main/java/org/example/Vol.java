@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Vol {
@@ -82,6 +85,18 @@ public class Vol {
         System.out.println("Listing passager pour le vol " + this.numeroVol);
         for (int i = 0; i < passagerAffecte.size(); i++) {
             System.out.println("Nom : " + passagerAffecte.get(i).getNom() + ", Identifiant : " + passagerAffecte.get(i).getIdentifiant());
+        }
+    }
+
+    public void importVol() {
+        String filePath = "cheminPath/fichier.csv";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine())!= null){
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier " + e.getMessage());
         }
     }
 
