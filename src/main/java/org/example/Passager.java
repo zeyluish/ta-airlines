@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -53,6 +56,20 @@ public class Passager extends Personne {
     public String toString() {
         String s = super.toString() + "\nPasseport : " + passeport;
         return s;
+    }
+
+    public static writeReservation() {
+        String filePath = "cheminPath/fichier.txt";
+        try (BufferedWriter writer = new BufferedWriter(new
+                FileWriter(filePath, true))) // `true` pour ajouter à la fin
+        {
+            writer.write("Ceci est un exemple de texte.");
+            writer.newLine(); // Ajoute une nouvelle ligne
+            writer.write("Une autre ligne de texte.");
+        } catch (IOException e) {
+            System.err.println("Erreur lors de l'écriture dans le fichier : " +
+                    e.getMessage());
+        }
     }
 
     public String getPasseport() {
