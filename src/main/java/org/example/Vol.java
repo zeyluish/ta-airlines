@@ -20,6 +20,7 @@ public class Vol {
     Aeroport arriveAeroportAffecte;
     ArrayList<Passager> passagerAffecte = new ArrayList();
     ArrayList<Reservation> listeReservation = new ArrayList();
+    ArrayList<String> listeVol = new ArrayList<>();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -94,6 +95,7 @@ public class Vol {
             String line;
             while ((line = reader.readLine())!= null){
                 System.out.println(line);
+                listeVol.add(line);
             }
         } catch (IOException e) {
             System.out.println("Erreur lors de la lecture du fichier " + e.getMessage());
