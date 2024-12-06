@@ -1,7 +1,11 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Avion {
@@ -9,6 +13,7 @@ public class Avion {
     String modele;
     int capacite;
     Vol volAffecte;
+    static ArrayList<Avion> listeAvions = new ArrayList<>();
 
     public Avion(int immatriculation, String modele, int capacite) {
         this.immatriculation = immatriculation;
@@ -81,6 +86,35 @@ public class Avion {
         System.out.println("Le vol a bien été supprimé");
     }
 
+    public static void importAvion() {
+        String filePath = "src/avion1.csv";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 3) {
+                    try {
+                        int immatriculation = Integer.parseInt(parts[0]);
+                        String modele = parts[1];
+                        int capacite = Integer.parseInt(parts[2]);
+                        Avion avion = new Avion(immatriculation, modele, capacite);
+                        listeAvions.add(avion);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erreur de conversion sur cette ligne : " + line);
+                    }
+                } else {
+                    System.out.println("Ligne mal formée, ignorée : " + line);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
+
+        System.out.println("Importation terminée. Nombre d'avions importés : " + listeAvions.size());
+        for (Avion avion : listeAvions) {
+            System.out.println(avion);
+        }
+    }
 
     public Vol getVolAffecte() {
         return volAffecte;

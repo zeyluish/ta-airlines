@@ -13,6 +13,8 @@ public class Personne {
         this.adresse = adresse;
         this.contact = contact;
     }
+    // <editor-fold desc="Getter and setter">
+
 
     public UUID getIdentifiant() {
         return identifiant;
@@ -45,6 +47,8 @@ public class Personne {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    // </editor-fold>
 
     public String toString() {
         String s = "Les informations de " + nom + " sont :" + "\nIdentifiant : "+ identifiant + "\nAdresse : " + adresse + "\nContact : " + contact;

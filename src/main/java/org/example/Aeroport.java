@@ -93,6 +93,8 @@ public class Aeroport {
         return s;
     }
 
+    // <editor-fold desc="Getter and setter">
+
     public String getNom() {
         return nom;
     }
@@ -116,4 +118,6 @@ public class Aeroport {
     public void setDescription(String description) {
         this.description = description;
     }
+    // </editor-fold>
+
 }
