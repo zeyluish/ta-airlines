@@ -15,8 +15,8 @@ public class Vol {
     ArrayList personnelCabinesAffecte = new ArrayList();
     Aeroport departAeroportAffecte;
     Aeroport arriveAeroportAffecte;
-    static ArrayList<Passager> passagerAffecte = new ArrayList();
-    static ArrayList<Reservation> listeReservation = new ArrayList();
+    ArrayList<Passager> passagerAffecte = new ArrayList();
+    ArrayList<Reservation> listeReservation = new ArrayList();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -79,6 +79,7 @@ public class Vol {
     }
 
     public void ListingPassager(){
+        System.out.println("Listing passager pour le vol " + this.numeroVol);
         for (int i = 0; i < passagerAffecte.size(); i++) {
             System.out.println("Nom : " + passagerAffecte.get(i).getNom() + ", Identifiant : " + passagerAffecte.get(i).getIdentifiant());
         }

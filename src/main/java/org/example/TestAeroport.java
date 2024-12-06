@@ -21,16 +21,24 @@ public class TestAeroport {
 
         Aeroport CDG = new Aeroport("CDG", "Paris", "Aeroport CDG");
         Aeroport Oulu = new Aeroport("OuluAirport", "Oulu", "Aeroport de Oulu");
+        Aeroport Rome = new Aeroport("RomeAirport", "Rome", "Aeroport de Rome");
 
         Passager passager1 = new Passager(UUID.randomUUID(), "John Doe", "123 rue Exemple", "john.doe@email.com", "AB123456");
         Passager passager2 = new Passager(UUID.randomUUID(), "Jane Smith", "456 avenue Exemple", "jane.smith@email.com", "CD789012");
 
+        Pilote pilote1 = new Pilote("JP", "chez lui", "tel", "10/10/10", 2222,"licence", 13);
+        Pilote pilote2 = new Pilote("Gab", "ahbdfbazdba", "00000000", "101010", 0012, "llll", 11);
+
+        PersonnelCabine personnelCabine1 = new PersonnelCabine("Sophie", "8 rue AAAA", "0122334455", "12/12/12", 44444, "stiwart");
+        PersonnelCabine personnelCabine2 = new PersonnelCabine("Alice", "15 rue BBBB", "0654321987", "01/01/01", 55555, "stiwart");
+        PersonnelCabine personnelCabine3 = new PersonnelCabine("Thomas", "22 avenue CCCC", "0787654321", "15/03/99", 66666, "stiwart");
+        PersonnelCabine personnelCabine4 = new PersonnelCabine("Emma", "5 boulevard DDDD", "0123456789", "10/10/10", 77777, "stiwart");
 
         passager1.reserverVol(vol1);
         passager2.reserverVol(vol1);
+        passager1.reserverVol(vol2);
 
-
-        vol1.ListingPassager();
+        vol2.ListingPassager();
 
         affecterVol(vol2,Oulu,CDG);
         affecterVol(vol1,Oulu,CDG);

@@ -15,5 +15,5 @@ Après avoir lancé le projet, il est possible de  :
 - Affecter le personnel cabine à un vol
 - Un passager peut réserver un vol, l'annuler ou obtenir les informations sur sa réservation
 
-##Fonction particulière
+##Fonctions particulières
 Pour utiliser les fonctions modifier, par exemple modifierAvion, il faut préciser l'attribut que l'on souhaite modifier puis la valeur. Les deux attributs doivent être en string

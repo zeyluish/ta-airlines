@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Passager extends Personne {
     private String passeport;
-    private static ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+    private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
     public Passager(UUID identifiant, String nom, String adresse, String contact, String passeport) {
         super(nom, adresse, contact);
@@ -17,13 +17,13 @@ public class Passager extends Personne {
             Reservation nouvelleReservation = new Reservation(reservations.size() + 1,vol.dateHeureDepart);
             nouvelleReservation.setPassagerAffecté(this);
             nouvelleReservation.setVolaffecte(vol);
-            Vol.listeReservation.add(nouvelleReservation);
+            vol.listeReservation.add(nouvelleReservation);
             vol.passagerAffecte.add(this);
             reservations.add(nouvelleReservation);
             System.out.println("Le vol a été reservé avec succès");
         }
-
     }
+
     public void annulerReservation(Vol vol) {
         for (Reservation reservation : reservations) {
             if (reservation.getVolaffecte() != null && reservation.getVolaffecte().equals(vol)) {
