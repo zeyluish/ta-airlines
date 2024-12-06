@@ -20,7 +20,7 @@ public class Vol {
     Aeroport arriveAeroportAffecte;
     ArrayList<Passager> passagerAffecte = new ArrayList();
     ArrayList<Reservation> listeReservation = new ArrayList();
-    static ArrayList<String> listeVol = new ArrayList<>();
+    static ArrayList<Vol> listeVol = new ArrayList<>();
 
     public Vol(int numeroVol, String origine, String destination, String dateHeureDepart, String dateHeureArrive, String etat) {
         this.numeroVol = numeroVol;
@@ -89,19 +89,39 @@ public class Vol {
         }
     }
 
-    public static ArrayList<String> importVol() {
+    public static void importVol() {
         String filePath = "src/vols.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
-            while ((line = reader.readLine())!= null){
-                System.out.println(line);
-                listeVol.add(line);
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 6) {
+                    try {
+                        int numeroVol = Integer.parseInt(parts[0]);
+                        String origine = parts[1];
+                        String destination = parts[2];
+                        String dateHeureDepart = parts[3];
+                        String dateHeureArrive = parts[4];
+                        String etat = parts[5];
+
+                        Vol vol = new Vol(numeroVol, origine, destination, dateHeureDepart, dateHeureArrive, etat);
+                        listeVol.add(vol);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erreur de conversion sur cette ligne : " + line);
+                    }
+                } else {
+                    System.out.println("Ligne mal formée, ignorée : " + line);
+                }
             }
         } catch (IOException e) {
-            System.out.println("Erreur lors de la lecture du fichier " + e.getMessage());
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
         }
-        return listeVol;
+        System.out.println("Importation terminée. Nombre de vols importés : " + listeVol.size());
+        for (Vol vol : listeVol) {
+            System.out.println(vol);
+        }
     }
+
 
     public String toString() {
         String s = "Numero vol : " + numeroVol + ", Origine : " + origine + ", Destination : " + destination + ", Date heure arrivée : " + dateHeureArrive + ", DateHeureDepart : " + dateHeureDepart + ", etat : " + etat;
@@ -130,6 +150,7 @@ public class Vol {
         }
         return s;
     }
+// <editor-fold desc="Getter and setter">
 
     public Avion getAvionAffecte() {
         return avionAffecte;
@@ -218,4 +239,6 @@ public class Vol {
     public void setPersonnelCabinesAffecte(ArrayList personnelCabinesAffecte) {
         this.personnelCabinesAffecte = personnelCabinesAffecte;
     }
+    // </editor-fold>
+
 }

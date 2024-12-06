@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Aeroport {
@@ -7,6 +10,7 @@ public class Aeroport {
     String ville;
     String description;
     private ArrayList<Vol> volAffecte = new ArrayList<>();
+    static ArrayList<Aeroport> listeAeroport = new ArrayList<>();
 
 
     public Aeroport(String nom, String ville, String description) {
@@ -53,6 +57,34 @@ public class Aeroport {
                 return;
         }
         System.out.println("L'aéroport a bien été modifié : " + this);
+    }
+
+    public static void importAeroport() {
+        String filePath = "src/aeroport.csv";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 3) {
+                    try {
+                        String nom = parts[0];
+                        String ville = parts[1];
+                        String description = parts[2];
+
+                        Aeroport aeroport = new Aeroport(nom, ville, description);
+                        listeAeroport.add(aeroport);
+                    } catch (Exception e) {
+                        System.out.println("Erreur sur cette ligne : " + line);
+                    }
+                } else {
+                    System.out.println("Ligne mal formée, ignorée : " + line);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
+
+        System.out.println("Importation terminée. Nombre d'aéroports importés : " + listeAeroport.size());
     }
 
     @Override
