@@ -17,3 +17,6 @@ Après avoir lancé le projet, il est possible de  :
 
 ##Fonctions particulières
 Pour utiliser les fonctions modifier, par exemple modifierAvion, il faut préciser l'attribut que l'on souhaite modifier puis la valeur. Les deux attributs doivent être en string
+
+##Lancer le projet
+Pour lancer le projet, il faut lancer le fichier Main
