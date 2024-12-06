@@ -4,9 +4,11 @@ package org.example;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import static org.example.Vol.importVol;
+
 public class Main {
     public static void main(String[] args) {
-        Personne p1 = new Personne("Téo GAUDIN", "69 rue Emile AUGIER", "0783583150");
+        /*Personne p1 = new Personne("Téo GAUDIN", "69 rue Emile AUGIER", "0783583150");
         p1.obtenirInfos();
         Passager passager1 = new Passager(UUID.randomUUID(), "John Doe", "123 rue Exemple", "john.doe@email.com", "AB123456");
         Pilote pilote1 = new Pilote("JP", "chez lui", "tel", "10/10/10", 2222,"licence", 13);
@@ -19,18 +21,11 @@ public class Main {
         PersonnelCabine personnelCabine4 = new PersonnelCabine("Emma", "5 boulevard DDDD", "0123456789", "10/10/10", 77777, "stiwart");
         PersonnelCabine personnelCabine5 = new PersonnelCabine("Lucas", "18 rue EEEE", "0987654321", "20/05/15", 88888, "stiwart");
         PersonnelCabine personnelCabine6 = new PersonnelCabine("Marie", "30 impasse FFFF", "0678901234", "25/12/20", 99999, "stiwart");
+        */
+        importVol();
+        System.out.println(Vol.listeVol.get(1).toString());
 
-        Vol vol1 = new Vol(1111, "Paris", "Mexico", "19h", "20h", "A l'heure");
-        Vol vol2 = new Vol(2222, "Londres", "Tokyo", "10h", "22h", "Retardé");
-        Vol vol3 = new Vol(3333, "New York", "Toronto", "14h", "15h", "Annulé");
-        Vol vol4 = new Vol(4444, "Berlin", "Rome", "08h", "10h", "A l'heure");
-        Vol vol5 = new Vol(5555, "Sydney", "Los Angeles", "06h", "22h", "En vol");
-        Vol vol6 = new Vol(6666, "Moscou", "Istanbul", "12h", "16h", "Retardé");
-        Vol vol7 = new Vol(7777, "Madrid", "Dubaï", "18h", "02h", "A l'heure");
-
-
-
-        ArrayList<Vol> vols = new ArrayList<>();
+        /*ArrayList<Vol> vols = new ArrayList<>();
         vols.add(vol1);
         vols.add(vol2);
         vols.add(vol3);
@@ -79,6 +74,6 @@ public class Main {
         System.out.println(s2);
 
         String s3 = passager1.toString();
-        System.out.println(s3);
+        System.out.println(s3);*/
     }
 }
