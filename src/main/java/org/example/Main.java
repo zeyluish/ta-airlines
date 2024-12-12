@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import static org.example.Aeroport.*;
 import static org.example.Aeroport.affecterVol;
+import static org.example.Reservation.obtenirNumeroReservation;
+import static org.example.Reservation.saveReservation;
 import static org.example.Vol.importVol;
 import static org.example.Vol.planifierVol;
 
@@ -48,9 +50,13 @@ public class Main {
         System.out.println("\nReservation de vol par un passager : ");
         passager1.reserverVol(vol1);
         passager2.reserverVol(vol1);
-        passager1.reserverVol(vol2);
+        passager2.reserverVol(vol2);
+
         System.out.println("\nListing passager : ");
         vol1.ListingPassager();
+
+        System.out.println("\nEcriture dans le fichier reservation.csv : ");
+        saveReservation(obtenirNumeroReservation(passager1)); // écriture dans le fichier reservation.csv
 
         System.out.println("\nListe de réservation par un passager : ");
         passager1.obtenirReservations();

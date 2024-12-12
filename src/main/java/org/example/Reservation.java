@@ -3,18 +3,23 @@ package org.example;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Reservation {
-    int numeroReservation;
+    static int numeroReservation;
     String dateReservation;
     boolean isActive;
     Passager passagerAffecté;
     Vol volaffecte;
 
+    static ArrayList<Reservation> reservations = new ArrayList<>();
+
     public Reservation(int numeroReservation, String dateReservation) {
         this.numeroReservation = numeroReservation;
         this.dateReservation = dateReservation;
         this.isActive = true;
+
+        reservations.add(this);
     }
 
     public void confirmerReservation() {
@@ -41,20 +46,35 @@ public class Reservation {
     }
 
 
-    public static void saveReservation(Reservation reservation) {
+    public static void saveReservation(int numeroReservation) {
         String filePath = "src/reservation.csv";
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) // `true` pour ajouter à la fin
         {
-            if (reservation.isActive) {
-                writer.write(reservation.numeroReservation + ";" + reservation.dateReservation + ";" + reservation.passagerAffecté + ";" + reservation.volaffecte);
+            if (obtenirReservation(numeroReservation).isActive) {
+                writer.write(numeroReservation + ";" + obtenirReservation(numeroReservation).dateReservation + ";" + obtenirReservation(numeroReservation).passagerAffecté.nom + ";" + obtenirReservation(numeroReservation).volaffecte.numeroVol);
+                writer.newLine();
+                System.out.println("Le CSV a été mis à jour");
             }
         } catch (IOException e) {
             System.err.println("Erreur lors de l'écriture dans le fichier : " + e.getMessage());
         }
     }
 
+    public static Reservation obtenirReservation(int numeroReservation) {
+        for(Reservation reservation : reservations) {
+            if (reservation.getNumeroReservation() == numeroReservation) {
+                return reservation;
+            }
+        }
+        return null;
+    }
+
+    public static int obtenirNumeroReservation(Passager passager) {
+        return numeroReservation;
+    }
+
     public String toString() {
-        String s =                 "numeroReservation = " + numeroReservation +
+        String s = "numeroReservation = " + numeroReservation +
                 ", dateReservation = '" + dateReservation + '\''
                 + " Etat = " + isActive;
         if (volaffecte != null) {
