@@ -15,7 +15,6 @@ public class Main {
     public static void main(String[] args) {
         ArrayList listeVol = new ArrayList();
 
-
         Avion avion1 = new Avion(78,"Airbus", 200);
         Avion avion2 = new Avion(92,"Boieng", 150);
 
