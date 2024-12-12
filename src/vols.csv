@@ -1,20 +1,11 @@
-2;Londres;Paris;05/12/2024 00:00;05/12/2024 14:00;Retard
-3;Tokyo;San Francisco;06/12/2024 08:00;06/12/2024 12:30;A l'heure
-4;Rome;Berlin;05/12/2024 09:15;05/12/2024 11:30;Annule
-5;Madrid;Lisbonne;05/12/2024 15:00;05/12/2024 16:20;A l'heure
-6;New York;Paris;06/12/2024 18:00;07/12/2024 07:45;A l'heure
-7;Sydney;Melbourne;05/12/2024 14:00;05/12/2024 15:25;Retard
-8;Los Angeles;Tokyo;05/12/2024 22:00;06/12/2024 06:45;A l'heure
-9;Beijing;Shanghai;05/12/2024 12:00;05/12/2024 14:10;Retard
-10;Dubai;Doha;05/12/2024 13:45;05/12/2024 14:55;A l'heure
-11;Paris;Moscou;05/12/2024 20:00;05/12/2024 23:45;A l'heure
-12;S\'e3o Paulo;Buenos Aires;05/12/2024 10:15;05/12/2024 12:45;Annule
-13;Bangkok;Hanoi;05/12/2024 16:00;05/12/2024 17:30;A l'heure
-14;Toronto;Vancouver;06/12/2024 09:00;06/12/2024 11:30;Retard
-15;Mexico City;Canc\'fan;05/12/2024 18:45;05/12/2024 20:15;A l'heure
-16;Cape Town;Johannesburg;05/12/2024 07:00;05/12/2024 09:15;Retard
-17;Seoul;Osaka;05/12/2024 10:00;05/12/2024 13:00;A l'heure
-18;Singapore;Kuala Lumpur;05/12/2024 11:00;05/12/2024 12:10;A l'heure
-19;Istanbul;Athenes;05/12/2024 08:00;05/12/2024 09:30;Annule
-20;Frankfurt;Amsterdam;05/12/2024 19:00;05/12/2024 20:30;A l'heure
-
+2;Londres;Paris;2024-12-05 00:00;2024-12-05 14:00;Retard
+3;Tokyo;San Francisco;2024-12-06 08:00;2024-12-06 12:30;A l'heure
+4;Rome;Berlin;2024-12-05 09:15;2024-12-05 11:30;Annule
+5;Madrid;Lisbonne;2024-12-05 15:00;2024-12-05 16:20;A l'heure
+6;New York;Paris;2024-12-06 18:00;2024-12-07 07:45;A l'heure
+7;Sydney;Melbourne;2024-12-05 14:00;2024-12-05 15:25;Retard
+8;Los Angeles;Tokyo;2024-12-05 22:00;2024-12-06 06:45;A l'heure
+9;Beijing;Shanghai;2024-12-05 12:00;2024-12-05 14:10;Retard
+10;Dubai;Doha;2024-12-05 13:45;2024-12-05 14:55;A l'heure
+21;Paris;Londres;2024-12-05 10:00;2024-12-05 12:30;A l'heure
+22;Berlin;Amsterdam;2024-12-05 11:00;2024-12-05 13:00;A l'heure

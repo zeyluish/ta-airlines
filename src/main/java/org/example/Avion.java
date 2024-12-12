@@ -111,9 +111,6 @@ public class Avion {
         }
 
         System.out.println("Importation terminée. Nombre d'avions importés : " + listeAvions.size());
-        for (Avion avion : listeAvions) {
-            System.out.println(avion);
-        }
     }
 
     public Vol getVolAffecte() {
