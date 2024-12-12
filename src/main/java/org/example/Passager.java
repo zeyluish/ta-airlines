@@ -46,7 +46,7 @@ public class Passager extends Personne {
         if (reservations.isEmpty()) {
             System.out.println("Ce passager n'a aucune réservation.");
         } else {
-            System.out.println("Réservations du passager :" + super.nom + " :");
+            System.out.println("Réservations du passager " + super.nom + " :");
             for (Reservation reservation : reservations) {
                 System.out.println(reservation);
             }

@@ -116,9 +116,7 @@ public class Vol {
             System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
         }
         System.out.println("Importation terminée. Nombre de vols importés : " + listeVol.size());
-        for (Vol vol : listeVol) {
-            System.out.println(vol);
-        }
+
     }
 
 

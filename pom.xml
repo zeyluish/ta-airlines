@@ -30,6 +30,11 @@
             <artifactId>gson</artifactId>
             <version>2.10</version> <!-- Pour parser la réponse JSON -->
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.0-M1</version>
+        </dependency>
     </dependencies>
 
 </project>

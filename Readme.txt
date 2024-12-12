@@ -20,3 +20,6 @@ Pour utiliser les fonctions modifier, par exemple modifierAvion, il faut précis
 
 ##Lancer le projet
 Pour lancer le projet, il faut lancer le fichier Main
+
+##Deuxième partie du projet :
+Un autre fichier de test "MainV2" a été créer afin de tester la lecture et l'écriture dans un CSV, ainsi que l'utilisation d'une API (https://randomuser.me/)
